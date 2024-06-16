@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 require("dotenv").config();
-const config = require("./config.json");
+// const config = require("./config.json");
 const mongoose = require("mongoose");
 
 const User = require("./models/user.models");
@@ -10,7 +10,7 @@ const Note = require("./models/note.model");
 
 //DatatBase Connection
 mongoose
-  .connect(config.connectionSrtring)
+  .connect(process.env.connectionSrtring)
   .then(() => {
     console.log("MongoDb Connected");
   })
